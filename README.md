@@ -12,11 +12,14 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 
 | Verb | Meaning |
 |------|---------|
+| Asking the rav | Consulting a rabbi on a halachic question |
+| Being machmir | Taking the stricter halachic position |
 | Bentshing | Saying grace after meals |
 | Chapping | Grasping / understanding |
 | Chapping the inyan | Getting the point |
 | Chazering | Reviewing material |
 | Checking Artscroll | Looking up the translation |
+| Checking Mishna Berurah | Consulting the halachic code |
 | Checking the eiruv | Verifying the weekly eiruv status |
 | Curling peyos | Twirling the sidelocks |
 | Davening | Praying |
@@ -26,11 +29,15 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 | Farkoching | Getting worked up / agitated |
 | Farshimmeling | Getting moldy / confused |
 | Farshlepping | Dragging along |
+| Flipping out | Becoming more religious after a year in Israel |
 | Fressing | Eating heartily |
 | Fressing on kugel | Self-explanatory |
+| Frumming out | Becoming more observant |
 | Getting the pshat | Understanding the plain meaning |
+| Going back to the beis | Returning to the study hall |
 | Hocking | Bothering / talking incessantly |
 | Kibitzing | Joking around |
+| Kvelling | Bursting with pride |
 | Kvetching | Complaining |
 | Laining | Reading the Torah portion |
 | Learning a blatt | Studying a page of Talmud |
@@ -43,6 +50,7 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 | Paskening | Ruling on a halachic question |
 | Running to minyan | Racing to make the prayer quorum |
 | Saying a vort | Sharing a Torah thought |
+| Schepping nachas | Deriving pride and joy from someone |
 | Schmoozing | Chatting |
 | Schmoozing in shul | During davening, naturally |
 | Shlepping a sefer | Carrying a religious book |
@@ -52,9 +60,11 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 | Shuckling | Swaying during prayer |
 | Singing zemiros | Shabbos table songs |
 | Stroking the beard | Thinking deeply |
+| Tying the gartel | Putting on the prayer sash |
 | Toiveling | Ritually immersing in the mikveh |
 | Twirling tzitzis | Absentmindedly spinning the fringes |
 | Tzuchapping | Grabbing / snatching |
+| Waiting for cholent | Shabbos anticipation at its peak |
 
 ### Israeli
 
@@ -63,14 +73,19 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 | Arguing politics | A national pastime |
 | Balagan-ing | Creating chaos |
 | Calling ima | Checking in with mom |
-| Davka-ing | Doing something specifically / despite |
+| Checking the family WhatsApp | 47 unread messages |
+| Davka-ing | Doing something specifically / despite everything |
 | Doing miluim | Serving in the reserves |
 | Dugri-ing | Being blunt / direct |
 | Eating at the shuk | Grabbing food at the market |
 | Eating falafel | Essential |
 | Eating shawarma | Also essential |
 | Finding parking in Tel Aviv | Mythical |
+| Floating in the Dead Sea | Obligatory |
 | Frier-ing | Being a sucker |
+| Getting advice from a cab driver | Unsolicited political opinions |
+| Hiking the shvil | Walking the Israel National Trail |
+| Making a mangal | BBQ — the Israeli national ritual |
 | Making aliyah | Moving to Israel |
 | Making hummus | A serious endeavor |
 | Missing the egged bus | By seconds, always |
@@ -142,7 +157,5 @@ PRs welcome. New verbs should be:
 - A gerund form (ending in -ing, or a short phrase)
 - Brief enough to read in a spinner
 - Not mean-spirited or offensive
+- **Include a definition** in the README table — even if the meaning seems obvious
 
-## License
-
-MIT
