@@ -1,16 +1,24 @@
-# yeshivish-spinner
+# claude-code-Jewish-spinner-verbs
 
-Adds 25 Yeshivish words to the Claude Code spinner animation.
+Adds Jewish-flavored spinner verbs to Claude Code. Instead of "Thinking…" or "Crunching…", you might see "Davening…", "Twirling tzitzis…", or "Yalla-ing…"
 
-Instead of "Thinking…" or "Crunching…", you might see "Davening…", "Shteiging…", or "Farbrengening…"
+Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Israeli/Hebrew slang in English). Install one or both.
 
-## Verbs
+---
+
+## Packages
+
+### Yeshivish
 
 | Verb | Meaning |
 |------|---------|
 | Bentshing | Saying grace after meals |
 | Chapping | Grasping / understanding |
-| Chazering | Reviewing / going over material |
+| Chapping the inyan | Getting the point |
+| Chazering | Reviewing material |
+| Checking Artscroll | Looking up the translation |
+| Checking the eiruv | Verifying the weekly eiruv status |
+| Curling peyos | Twirling the sidelocks |
 | Davening | Praying |
 | Farbrengening | Celebrating at a farbrengen gathering |
 | Farbissening | Being bitter / grumpy |
@@ -19,71 +27,119 @@ Instead of "Thinking…" or "Crunching…", you might see "Davening…", "Shteig
 | Farshimmeling | Getting moldy / confused |
 | Farshlepping | Dragging along |
 | Fressing | Eating heartily |
+| Fressing on kugel | Self-explanatory |
+| Getting the pshat | Understanding the plain meaning |
 | Hocking | Bothering / talking incessantly |
-| Kibitzing | Joking around / making wisecracks |
+| Kibitzing | Joking around |
 | Kvetching | Complaining |
 | Laining | Reading the Torah portion |
+| Learning a blatt | Studying a page of Talmud |
 | Lerning | Studying Torah |
-| Nudging | Nudging / pestering |
+| Losing the place | Classic shul experience |
+| Making a kiddush | Sanctifying Shabbos over wine |
+| Making a l'chaim | Toasting |
+| Making a siyum | Completing a tractate |
+| Nudging | Pestering |
 | Paskening | Ruling on a halachic question |
-| Schmoozing | Chatting / socializing |
-| Shpritzing | Sprinkling / making jokes |
+| Running to minyan | Racing to make the prayer quorum |
+| Saying a vort | Sharing a Torah thought |
+| Schmoozing | Chatting |
+| Schmoozing in shul | During davening, naturally |
+| Shlepping a sefer | Carrying a religious book |
+| Shpritzing | Making jokes |
 | Shteiging | Learning Torah intensely / growing spiritually |
 | Shtelling | Raising a question (shtell a kasha) |
 | Shuckling | Swaying during prayer |
+| Singing zemiros | Shabbos table songs |
+| Stroking the beard | Thinking deeply |
 | Toiveling | Ritually immersing in the mikveh |
+| Twirling tzitzis | Absentmindedly spinning the fringes |
 | Tzuchapping | Grabbing / snatching |
+
+### Israeli
+
+| Verb | Meaning |
+|------|---------|
+| Arguing politics | A national pastime |
+| Balagan-ing | Creating chaos |
+| Calling ima | Checking in with mom |
+| Davka-ing | Doing something specifically / despite |
+| Doing miluim | Serving in the reserves |
+| Dugri-ing | Being blunt / direct |
+| Eating at the shuk | Grabbing food at the market |
+| Eating falafel | Essential |
+| Eating shawarma | Also essential |
+| Finding parking in Tel Aviv | Mythical |
+| Frier-ing | Being a sucker |
+| Making aliyah | Moving to Israel |
+| Making hummus | A serious endeavor |
+| Missing the egged bus | By seconds, always |
+| Paying arnona | Municipal tax season |
+| Protektzia-ing | Using connections to get things done |
+| Sababa-ing | Everything is cool / great |
+| Speaking Hebrish | Hebrew-English mix |
+| Tachles-ing | Getting to the point |
+| Waiting for the sherut | Shared taxi, departure TBD |
+| Walla-ing | Expressing genuine surprise |
+| Yalla-ing | Let's go / hurry up |
+
+---
 
 ## Installation
 
 ### macOS / Linux
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ElimelekhPerl/yeshivish-spinner/refs/heads/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ElimelekhPerl/claude-code-Jewish-spinner-verbs/refs/heads/main/install.sh | bash
 ```
 
 Or clone and run:
 
 ```bash
-git clone https://github.com/ElimelekhPerl/yeshivish-spinner.git
-cd yeshivish-spinner
+git clone https://github.com/ElimelekhPerl/claude-code-Jewish-spinner-verbs.git
+cd claude-code-Jewish-spinner-verbs
 bash install.sh
 ```
+
+The installer will ask:
+1. **Package** — Yeshivish / Israeli / Both
+2. **Mode** — Append (add to built-ins) or Replace (only your verbs)
+3. **Existing settings** — Merge, Overwrite, or Cancel
 
 ### Windows
 
 ```powershell
-irm https://raw.githubusercontent.com/ElimelekhPerl/yeshivish-spinner/refs/heads/master/install.ps1 | iex
+irm https://raw.githubusercontent.com/ElimelekhPerl/claude-code-Jewish-spinner-verbs/refs/heads/main/install.ps1 | iex
 ```
 
 ### Manual
 
-Merge the contents of `spinner-verbs.json` into your `~/.claude/settings.json`:
+Copy the relevant package(s) from `packages/` and add to `~/.claude/settings.json`:
 
 ```json
 {
   "spinnerVerbs": {
     "mode": "append",
-    "verbs": ["Davening", "Shteiging", "..."]
+    "verbs": ["Davening", "Shteiging", "Yalla-ing", "..."]
   }
 }
 ```
 
 Restart Claude Code after installing.
 
+---
+
 ## Known issue
 
-As of Claude Code v2.1.132, there is [an open bug](https://github.com/anthropics/claude-code/issues/23347) where `spinnerVerbs` in user-level settings (`~/.claude/settings.json`) may be silently ignored. If you don't see the new verbs after restarting, try adding the setting to your project-level `.claude/settings.json` instead.
+There is [an open bug](https://github.com/anthropics/claude-code/issues/23347) where `spinnerVerbs` in user-level settings (`~/.claude/settings.json`) may be silently ignored. If you don't see new verbs after restarting, try adding the `spinnerVerbs` block to your project-level `.claude/settings.json` instead.
 
-## Customization
-
-Set `"mode": "replace"` in `spinner-verbs.json` to use only Yeshivish verbs (no defaults). Set `"mode": "append"` (default) to add them alongside the built-in list.
+---
 
 ## Contributing
 
 PRs welcome. New verbs should be:
-- Authentic Yeshivish / Yiddish-English blend
-- A gerund (ending in -ing)
+- Authentic Yeshivish/Yiddish-English or Israeli slang
+- A gerund form (ending in -ing, or a short phrase)
 - Brief enough to read in a spinner
 - Not mean-spirited or offensive
 

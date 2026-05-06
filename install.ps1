@@ -1,9 +1,9 @@
-# install.ps1 — Install Yeshivish spinner verbs into Claude Code.
+# install.ps1 — Install Jewish spinner verbs into Claude Code.
 # Windows PowerShell 5.1+. No external dependencies required.
 
 $ErrorActionPreference = 'Stop'
 
-$RepoRawUrl   = "https://raw.githubusercontent.com/ElimelekhPerl/yeshivish-spinner/refs/heads/master/spinner-verbs.json"
+$RepoRaw      = "https://raw.githubusercontent.com/ElimelekhPerl/claude-code-Jewish-spinner-verbs/refs/heads/main/packages"
 $SettingsDir  = Join-Path $env:USERPROFILE ".claude"
 $SettingsFile = Join-Path $SettingsDir "settings.json"
 
@@ -11,24 +11,58 @@ function Say  { param($msg) Write-Host "==> $msg" -ForegroundColor Green }
 function Warn { param($msg) Write-Host "==> $msg" -ForegroundColor Yellow }
 function Err  { param($msg) Write-Host "==> $msg" -ForegroundColor Red }
 
-# --- fetch verbs ---
-Say "Fetching the latest verbs from GitHub..."
-$TmpVerbs = [System.IO.Path]::GetTempFileName()
-
-try {
-  Invoke-WebRequest -Uri $RepoRawUrl -OutFile $TmpVerbs -UseBasicParsing
-} catch {
-  Err "Couldn't fetch the verbs file. Check your internet, or the URL:"
-  Err "  $RepoRawUrl"
-  exit 1
+function Fetch-Verbs {
+  param($Pkg)
+  $tmp = [System.IO.Path]::GetTempFileName()
+  try {
+    Invoke-WebRequest -Uri "$RepoRaw/$Pkg.json" -OutFile $tmp -UseBasicParsing
+    $data = Get-Content $tmp -Raw | ConvertFrom-Json
+    Remove-Item $tmp -Force
+    return $data
+  } catch {
+    Remove-Item $tmp -Force -ErrorAction SilentlyContinue
+    throw "Couldn't fetch $Pkg.json. Check your internet connection."
+  }
 }
 
-try {
-  $null = Get-Content $TmpVerbs -Raw | ConvertFrom-Json
-} catch {
-  Err "Downloaded file isn't valid JSON. Aborting."
-  Remove-Item $TmpVerbs -Force
-  exit 1
+# --- choose package ---
+Write-Host ""
+Write-Host "Which verbs do you want to install?"
+Write-Host "  [y] Yeshivish  — beis medrash slang (Davening, Twirling tzitzis...)"
+Write-Host "  [i] Israeli    — Israeli slang in English (Yalla-ing, Eating shawarma...)"
+Write-Host "  [b] Both"
+Write-Host ""
+$PkgChoice = Read-Host "Package [y/i/b]"
+$Packages = switch ($PkgChoice.ToLower()) {
+  'y' { @('yeshivish') }
+  'i' { @('israeli') }
+  'b' { @('yeshivish', 'israeli') }
+  default { Err "Invalid choice. Run the script again."; exit 1 }
+}
+
+# --- choose mode ---
+Write-Host ""
+Write-Host "How should these verbs interact with the built-in Claude Code spinner?"
+Write-Host "  [a] Append   — add your verbs alongside the existing built-in list"
+Write-Host "  [r] Replace  — use only your verbs, drop all defaults"
+Write-Host ""
+$ModeChoice = Read-Host "Mode [a/r]"
+$Mode = switch ($ModeChoice.ToLower()) {
+  'a' { 'append' }
+  'r' { 'replace' }
+  default { Err "Invalid choice. Run the script again."; exit 1 }
+}
+
+# --- fetch selected packages ---
+Say "Fetching verb package(s): $($Packages -join ', ')..."
+$CombinedVerbs = @()
+foreach ($Pkg in $Packages) {
+  try {
+    $verbs = Fetch-Verbs $Pkg
+    $CombinedVerbs += $verbs
+  } catch {
+    Err $_; exit 1
+  }
 }
 
 # --- ensure settings dir exists ---
@@ -42,14 +76,14 @@ if (Test-Path $SettingsFile) {
   Warn "Found existing settings at: $SettingsFile"
   Write-Host ""
   Write-Host "  [m] Merge     — keep your other settings, replace only spinnerVerbs"
-  Write-Host "  [o] Overwrite — replace the whole file with just the spinner verbs"
+  Write-Host "  [o] Overwrite — replace the whole file (loses other settings)"
   Write-Host "  [c] Cancel"
   Write-Host ""
-  $Choice = Read-Host "Choose [m/o/c]"
-  switch ($Choice.ToLower()) {
-    'm' { $Action = "merge" }
-    'o' { $Action = "overwrite" }
-    default { Say "Nothing done. Tzu gezunt."; Remove-Item $TmpVerbs -Force; exit 0 }
+  $ExistingChoice = Read-Host "Choose [m/o/c]"
+  $Action = switch ($ExistingChoice.ToLower()) {
+    'm' { 'merge' }
+    'o' { 'overwrite' }
+    default { Say "Nothing done. Tzu gezunt."; exit 0 }
   }
 }
 
@@ -61,20 +95,26 @@ if (Test-Path $SettingsFile) {
   Say "Backed up existing settings to: $Backup"
 }
 
+# --- build config object ---
+$SpinnerConfig = [PSCustomObject]@{
+  spinnerVerbs = [PSCustomObject]@{
+    mode  = $Mode
+    verbs = $CombinedVerbs
+  }
+}
+
 # --- write ---
 switch ($Action) {
   { $_ -in 'install','overwrite' } {
-    Copy-Item $TmpVerbs $SettingsFile -Force
+    $SpinnerConfig | ConvertTo-Json -Depth 10 | Set-Content $SettingsFile -Encoding UTF8
   }
   'merge' {
     $existing = Get-Content $SettingsFile -Raw | ConvertFrom-Json
-    $incoming = Get-Content $TmpVerbs -Raw | ConvertFrom-Json
-    # Merge: incoming spinnerVerbs wins
-    $existing | Add-Member -Force -NotePropertyName 'spinnerVerbs' -NotePropertyValue $incoming.spinnerVerbs
+    $existing | Add-Member -Force -NotePropertyName 'spinnerVerbs' -NotePropertyValue $SpinnerConfig.spinnerVerbs
     $existing | ConvertTo-Json -Depth 10 | Set-Content $SettingsFile -Encoding UTF8
   }
 }
 
-Remove-Item $TmpVerbs -Force
-Say "Done. Restart Claude Code to see the new spinner verbs."
+Say "Done. Installed $($CombinedVerbs.Count) verbs (mode: $Mode)."
+Say "Restart Claude Code to see the new spinner."
 Say "If you change your mind, your old settings are in the .bak file."
