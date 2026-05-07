@@ -12,9 +12,15 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 
 | Verb | Meaning |
 |------|---------|
+| Adarabaring | Saying "on the contrary" / doing the opposite |
+| Arayn-getunig | Getting mamish into the sugya |
+| Asking a shaila | Asking a halachic question |
+| Asking my LOR | Consulting the Local Orthodox Rabbi |
 | Asking the rav | Consulting a rabbi on a halachic question |
+| Bateling | Wasting time — you know who you are |
 | Being machmir | Taking the stricter halachic position |
 | Bentshing | Saying grace after meals |
+| Bringing down sources | Citing rabbinic references |
 | Chapping | Grasping / understanding |
 | Chapping the inyan | Getting the point |
 | Chazering | Reviewing material |
@@ -33,7 +39,6 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 | Fressing | Eating heartily |
 | Fressing on kugel | Self-explanatory |
 | Frumming out | Becoming more observant |
-| Getting the pshat | Understanding the plain meaning |
 | Going back to the beis | Returning to the study hall |
 | Hocking | Bothering / talking incessantly |
 | Kibitzing | Joking around |
@@ -48,12 +53,21 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 | Making a siyum | Completing a tractate |
 | Nudging | Pestering |
 | Paskening | Ruling on a halachic question |
+| Pilpulifying | Engaging in elaborate Talmudic hairsplitting |
+| Plotzing | Fainting / exploding from shock or excitement |
+| Poking chazi | Doing a halachic vibe-check |
+| Punkting fahrkert | Getting it exactly backwards |
+| Redting | Arranging the perfect match |
+| Retroactively juxtaposing | So you do the Artscroll daf |
 | Running to minyan | Racing to make the prayer quorum |
 | Saying a vort | Sharing a Torah thought |
+| Saying better | Saying better |
 | Schepping nachas | Deriving pride and joy from someone |
 | Schmoozing | Chatting |
 | Schmoozing in shul | During davening, naturally |
+| Seeing pshat | Reading the plain meaning |
 | Shlepping a sefer | Carrying a religious book |
+| Shluffing | Sleeping |
 | Shpritzing | Making jokes |
 | Shteiging | Learning Torah intensely / growing spiritually |
 | Shtelling | Raising a question (shtell a kasha) |
@@ -64,18 +78,19 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 | Toiveling | Ritually immersing in the mikveh |
 | Twirling tzitzis | Absentmindedly spinning the fringes |
 | Tzuchapping | Grabbing / snatching |
+| Tzushtelling | Connecting a concept to a source |
 | Waiting for cholent | Shabbos anticipation at its peak |
 
 ### Israeli
 
 | Verb | Meaning |
 |------|---------|
-| Arguing politics | A national pastime |
+| Achlazizing | Finding everything absolutely amazing |
 | Balagan-ing | Creating chaos |
+| Betachifying | Saying "betach!" (of course!) to everything |
 | Calling ima | Checking in with mom |
 | Checking the family WhatsApp | 47 unread messages |
 | Davka-ing | Doing something specifically / despite everything |
-| Doing miluim | Serving in the reserves |
 | Dugri-ing | Being blunt / direct |
 | Eating at the shuk | Grabbing food at the market |
 | Eating falafel | Essential |
@@ -86,17 +101,22 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 | Getting advice from a cab driver | Unsolicited political opinions |
 | Hiking the shvil | Walking the Israel National Trail |
 | Making a mangal | BBQ — the Israeli national ritual |
-| Making aliyah | Moving to Israel |
 | Making hummus | A serious endeavor |
 | Missing the egged bus | By seconds, always |
+| Nachonizing | Saying "nachon" (right/correct) constantly |
+| Nu-ing | Expressing impatience |
 | Paying arnona | Municipal tax season |
 | Protektzia-ing | Using connections to get things done |
 | Sababa-ing | Everything is cool / great |
+| Savlanut-ing | Practicing patience — usually unsuccessfully |
+| Shpitzing | Being at the top / doing excellent |
 | Speaking Hebrish | Hebrew-English mix |
 | Tachles-ing | Getting to the point |
+| Tagiding | Starting every sentence with "tagid li..." |
 | Waiting for the sherut | Shared taxi, departure TBD |
 | Walla-ing | Expressing genuine surprise |
 | Yalla-ing | Let's go / hurry up |
+| Zoreming | Going with the flow |
 
 ---
 
