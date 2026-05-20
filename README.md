@@ -68,14 +68,18 @@ Two packages available: **Yeshivish** (beis medrash slang) and **Israeli** (Isra
 | Seeing pshat | Reading the plain meaning |
 | Shlepping a sefer | Carrying a religious book |
 | Shluffing | Sleeping |
+| Shpatziring | Taking a leisurely stroll |
 | Shpritzing | Making jokes |
 | Shteiging | Learning Torah intensely / growing spiritually |
 | Shtelling | Raising a question (shtell a kasha) |
 | Shuckling | Swaying during prayer |
+| Shvitzing | Sweating profusely |
 | Singing zemiros | Shabbos table songs |
 | Stroking the beard | Thinking deeply |
-| Tying the gartel | Putting on the prayer sash |
+| Tayna-ing | Making a halachic claim / arguing a point |
+| Teiching | Translating/explaining a text word by word |
 | Toiveling | Ritually immersing in the mikveh |
+| Tying the gartel | Putting on the prayer sash |
 | Twirling tzitzis | Absentmindedly spinning the fringes |
 | Tzuchapping | Grabbing / snatching |
 | Tzushtelling | Connecting a concept to a source |
